@@ -6,6 +6,7 @@
   },
   "private": true,
   "scripts": {
+    "build": "docker-compose run --rm --service-ports build",
     "fixpack": "npx fixpack",
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",

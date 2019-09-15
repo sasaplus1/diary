@@ -9,6 +9,10 @@ x-basic: &basic
     - .:/var/www
 
 services:
+  build:
+    <<: *basic
+    command:
+      - hugo
   new:
     <<: *basic
   serve:
