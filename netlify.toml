@@ -5,3 +5,9 @@
 [context.production.environment]
   HUGO_VERSION = "0.55.6"
   HUGO_ENV = "production"
+
+[[redirects]]
+  force = true
+  from = "https://sasaplus1-diary.netlify.com/*"
+  status = 301
+  to = "https://diary.sasaplus1.com/:splat"
