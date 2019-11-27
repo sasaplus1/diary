@@ -4,10 +4,15 @@
     "lint-staged": "^9.2.5",
     "npm-run-all": "^4.1.5"
   },
+  "engines": {
+    "node": "^12.13.0",
+    "yarn": "^1.19.1"
+  },
   "private": true,
   "scripts": {
     "build": "docker-compose run --rm --service-ports build",
     "fixpack": "npx fixpack",
+    "netlify": "NODE_ENV=production run-s build && hugo --gc --minify",
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",
     "sh": "docker-compose run --rm --service-ports sh"
