@@ -102,3 +102,10 @@ hugo.darwin
 hugo.linux
 
 
+### diary
+
+# stylelint cache
+.stylelintcache
+
+# Building CSS with PostCSS
+static/*.css
