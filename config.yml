@@ -14,6 +14,9 @@ footnoteReturnLinkContents: ↩
 
 hasCJKLanguage: true
 
+permalinks:
+  posts: /posts/:year/:month/:day/:filename
+
 pygmentsCodeFences: true
 pygmentsUseClasses: true
 
@@ -24,4 +27,4 @@ sitemap:
 
 title: diary.sasaplus1.com
 
-uglyUrls: true
+uglyUrls: false
