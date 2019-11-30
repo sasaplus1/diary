@@ -1,6 +1,8 @@
 FROM alpine:3.10
 
-RUN apk --no-cache add hugo
+ENV TZ=Asia/Tokyo
+
+RUN apk --no-cache add hugo tzdata
 
 WORKDIR /var/www
 
