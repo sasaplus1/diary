@@ -1,0 +1,20 @@
+<nav class="posts">
+  <h2 class="posts__heading">Posts</h2>
+  <ul class="posts__list">
+    {{ range .Pages }}
+    <li class="posts__item">
+      <a class="posts__link" href="{{ .Permalink }}">
+        <h3 class="posts__title">{{ .Title | htmlEscape }}</h3>
+        <div class="posts__meta">
+          <time class="posts__time" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{- .Date.Format "2006" }}年
+            {{- .Date.Format "1" }}月
+            {{- .Date.Format "2" }}日<!--
+          --></time>
+        </div>
+        <div class="posts__content">{{ .Content | plainify | truncate 200 }}</div>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>

@@ -2,11 +2,11 @@
 <html lang="ja">
   <head>
     {{ partial "basic-metas.html" . }}
-    <meta name="description" content="sasa+1's diary">
-    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="Posts of sasa+1's diary">
+    <title>Posts | {{ .Site.Title }}</title>
     {{ partial "basic-links.html" . }}
   </head>
-  <body class="index">
+  <body class="list">
     {{ partial "header.html" . }}
     <main class="main" role="main">
       {{ partial "posts.html" . }}

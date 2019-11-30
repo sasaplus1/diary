@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    {{ partial "basic-metas.html" . }}
+    <meta name="description" content="{{ .Content | plainify | truncate 90 }}">
+    <title>{{ .Title | htmlEscape }} | {{ .Site.Title }}</title>
+    {{ partial "basic-links.html" . }}
+  </head>
+  <body class="single">
+    {{ partial "header.html" . }}
+    <main class="main" role="main">
+      <article class="post">
+        <h2 class="post__title">{{ .Title | htmlEscape }}</h2>
+        <p class="post__meta">
+          <time class="post__time" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{- .Date.Format "2006" }}年
+            {{- .Date.Format "1" }}月
+            {{- .Date.Format "2" }}日<!--
+          --></time>
+        </p>
+        <div class="post__content">
+          {{ .Content }}
+        </div>
+      </article>
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

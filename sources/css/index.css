@@ -1,0 +1,156 @@
+@charset "utf-8";
+@import "ress";
+
+body {
+  @media (prefers-color-scheme: light) {
+    --theme-background-color: #fff;
+    --theme-border-color: #000;
+    --theme-color: #000;
+    --theme-focus-color: #9cf;
+    --theme-link-color: #36f;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --theme-background-color: #111;
+    --theme-border-color: #eee;
+    --theme-color: #eee;
+    --theme-focus-color: #6ff;
+    --theme-link-color: #3cf;
+  }
+
+  background-color: var(--theme-background-color);
+  border-color: var(--theme-border-color);
+  color: var(--theme-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+  margin: 0 auto;
+  padding-left: 2rem;
+  width: 100%;
+
+  @media only screen and (min-width: 800px) {
+    width: 800px;
+  }
+
+  & a:link,
+  & a:visited {
+    color: var(--theme-link-color);
+    text-decoration: none;
+  }
+
+  & a:focus {
+    box-shadow: 0 0 0 3px var(--theme-focus-color);
+    border-radius: 1px;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+}
+
+/**
+ * layouts/partials/header.html
+ */
+.title {
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+
+  & .title__heading {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+/**
+ * layouts/partials/footer.html
+ */
+.copyright {
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+
+  & .copyright__text {
+    font-size: 80%;
+    text-align: center;
+  }
+}
+
+/**
+ * commons
+ */
+.main {
+  display: block;
+}
+
+.posts {
+  margin-top: 2rem;
+
+  & .posts__heading {
+    border-bottom: 1px solid;
+    font-weight: normal;
+  }
+
+  & .posts__list {
+    margin-right: 2rem;
+
+    @media only screen and (min-width: 800px) {
+      margin-right: 0;
+    }
+  }
+
+  & .posts__item {
+    list-style-type: none;
+    margin-top: 3rem;
+  }
+
+  & .posts__item:first-child {
+    margin-top: 1rem;
+  }
+
+  & .posts__link {
+    display: block;
+  }
+
+  & .posts__title {
+    font-weight: normal;
+  }
+
+  & .posts__meta {
+
+    & .posts__time {
+      color: var(--theme-color);
+      font-size: 80%;
+    }
+  }
+
+  & .posts__content {
+    color: var(--theme-color);
+    margin-top: 1rem;
+  }
+}
+
+/**
+ * content/posts
+ */
+.post {
+  margin-right: 2rem;
+
+  @media only screen and (min-width: 800px) {
+    margin-right: 0;
+  }
+
+  & .post__title {
+    font-weight: normal;
+  }
+
+  & .post__meta {
+
+    & .post__time {
+      color: var(--theme-color);
+      font-size: 80%;
+    }
+  }
+
+  & .post__content {
+    color: var(--theme-color);
+    margin-top: 1rem;
+  }
+}
