@@ -1,5 +1,7 @@
 baseurl: https://diary.sasaplus1.com
 
+buildFuture: true
+
 defaultContentLanguage: ja
 
 disableHugoGeneratorInject: true
