@@ -1,18 +1,18 @@
 <nav class="posts">
-  <h2 class="posts__heading">Posts</h2>
+  <h2 class="visually-hidden">最近の記事とその概要</h2>
   <ul class="posts__list">
     {{ range .Pages }}
     <li class="posts__item">
       <a class="posts__link" href="{{ .Permalink }}">
-        <h3 class="posts__title">{{ .Title | htmlEscape }}</h3>
-        <div class="posts__meta">
+        {{- $at := .Date.Format "2006年1月2日" -}}
+        {{- $no := strings.TrimLeft "0" .BaseFileName -}}
+        <h3 class="posts__title" aria-label="{{ $at }} {{ $no }}番目の記事">
           <time class="posts__time" datetime="{{ .Date.Format "2006-01-02" }}">
-            {{- .Date.Format "2006" }}年
-            {{- .Date.Format "1" }}月
-            {{- .Date.Format "2" }}日<!--
-          --></time>
-        </div>
-        <div class="posts__content">{{ .Content | plainify | truncate 200 }}</div>
+            {{- $at -}}
+          </time>
+          #{{ $no }}
+        </h3>
+        <div class="posts__content">{{- .Summary }}</div>
       </a>
     </li>
     {{ end }}

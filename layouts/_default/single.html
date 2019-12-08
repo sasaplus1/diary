@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     {{ partial "basic-metas.html" . }}
-    <meta name="description" content="{{ .Content | plainify | truncate 90 }}">
+    <meta name="description" content="{{ .Summary | plainify | truncate 90 }}">
     <title>{{ .Title | htmlEscape }} | {{ .Site.Title }}</title>
     {{ partial "basic-links.html" . }}
   </head>
@@ -10,17 +10,15 @@
     {{ partial "header.html" . }}
     <main class="main">
       <article class="post">
-        <h2 class="post__title">{{ .Title | htmlEscape }}</h2>
-        <p class="post__meta">
+        {{- $at := .Date.Format "2006年1月2日" -}}
+        {{- $no := strings.TrimLeft "0" .BaseFileName -}}
+        <h2 class="post__title" aria-label="{{ $at }} {{ $no }}番目の記事">
           <time class="post__time" datetime="{{ .Date.Format "2006-01-02" }}">
-            {{- .Date.Format "2006" }}年
-            {{- .Date.Format "1" }}月
-            {{- .Date.Format "2" }}日<!--
-          --></time>
-        </p>
-        <div class="post__content">
-          {{ .Content }}
-        </div>
+            {{- $at -}}
+          </time>
+          #{{ $no }}
+        </h2>
+        <div class="post__content">{{- .Content -}}</div>
       </article>
     </main>
     {{ partial "footer.html" . }}
