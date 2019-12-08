@@ -51,6 +51,21 @@ body {
 }
 
 /**
+ * for screen readers
+ */
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px !important;
+}
+
+/**
  * layouts/partials/header.html
  */
 .title {
@@ -112,15 +127,8 @@ body {
   }
 
   & .posts__title {
+    font-size: 120%;
     font-weight: normal;
-  }
-
-  & .posts__meta {
-
-    & .posts__time {
-      color: var(--theme-color);
-      font-size: 80%;
-    }
   }
 
   & .posts__content {
@@ -140,15 +148,8 @@ body {
   }
 
   & .post__title {
+    font-size: 120%;
     font-weight: normal;
-  }
-
-  & .post__meta {
-
-    & .post__time {
-      color: var(--theme-color);
-      font-size: 80%;
-    }
   }
 
   & .post__content {
