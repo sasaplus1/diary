@@ -3,15 +3,15 @@
   <head>
     {{ partial "basic-metas.html" . }}
     <meta name="description" content="{{ .Summary | plainify | truncate 90 }}">
-    <title>{{ .Title | htmlEscape }} | {{ .Site.Title }}</title>
+    {{- $at := .Date.Format "2006年1月2日" -}}
+    {{- $no := strings.TrimLeft "0" .BaseFileName -}}
+    <title>{{ $at }} #{{ $no }} | {{ .Site.Title }}</title>
     {{ partial "basic-links.html" . }}
   </head>
   <body class="single">
     {{ partial "header.html" . }}
     <main class="main">
       <article class="post">
-        {{- $at := .Date.Format "2006年1月2日" -}}
-        {{- $no := strings.TrimLeft "0" .BaseFileName -}}
         <h2 class="post__title" aria-label="{{ $at }} {{ $no }}番目の記事">
           <time class="post__time" datetime="{{ .Date.Format "2006-01-02" }}">
             {{- $at -}}
