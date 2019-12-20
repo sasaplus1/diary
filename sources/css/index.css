@@ -160,7 +160,7 @@ body {
     margin-top: 1rem;
 
     & > * {
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
 
     & .highlight {
@@ -192,16 +192,21 @@ body {
       text-decoration: none;
     }
 
-    & ol {
-      margin: 2rem 0 2rem 2rem;
-    }
-
     & code:not([class^='language-']) {
       color: var(--theme-code-color);
       font-family: Inconsolata, Consolas, Menlo, Monaco, 'MigMix 1m',
         'migmix-1m', monospace;
       font-weight: bold;
+      line-height: 1.2;
       margin: 0 0.4rem;
+    }
+
+    & ol {
+      margin: 2rem 0 2rem 2rem;
+    }
+
+    & > p {
+      line-height: 1.6;
     }
   }
 
