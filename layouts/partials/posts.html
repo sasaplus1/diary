@@ -1,7 +1,13 @@
 <nav class="posts">
   <h2 class="visually-hidden">最近の記事とその概要</h2>
   <ul class="posts__list">
-    {{ range .Pages }}
+    {{- $section := .CurrentSection -}}
+    {{- if $section.IsHome -}}
+      {{ .Scratch.Set "pages" $.Site.RegularPages }}
+    {{- else -}}
+      {{ .Scratch.Set "pages" $section.Pages }}
+    {{- end -}}
+    {{- range (.Scratch.Get "pages") -}}
     <li class="posts__item">
       <a class="posts__link" href="{{ .Permalink }}">
         {{- $at := .Date.Format "2006年1月2日" -}}
@@ -12,9 +18,9 @@
           </time>
           #{{ $no }}
         </h3>
-        <div class="posts__content">{{- .Summary }}</div>
+        <div class="posts__content">{{- .Summary | plainify -}}</div>
       </a>
     </li>
-    {{ end }}
+    {{- end -}}
   </ul>
 </nav>
