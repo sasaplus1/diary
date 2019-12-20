@@ -4,7 +4,7 @@
 
 [build.environment]
   HUGO_ENV = "production"
-  HUGO_VERSION = "0.55.6"
+  HUGO_VERSION = "0.61.0"
   # yarn is install modules without devDependencies when NODE_ENV is "production"
   NODE_ENV = "development"
   NODE_VERSION = "12.13.0"
