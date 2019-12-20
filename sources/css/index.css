@@ -6,6 +6,7 @@ body {
     --theme-background-color: #fff;
     --theme-border-color: #000;
     --theme-color: #000;
+    --theme-code-color: #36f;
     --theme-focus-color: #9cf;
     --theme-link-color: #36f;
   }
@@ -14,6 +15,7 @@ body {
     --theme-background-color: #111;
     --theme-border-color: #eee;
     --theme-color: #eee;
+    --theme-code-color: #3cf;
     --theme-focus-color: #6ff;
     --theme-link-color: #3cf;
   }
@@ -156,8 +158,43 @@ body {
     color: var(--theme-color);
     margin-top: 1rem;
 
-    & p {
+    & > * {
       margin-top: 1rem;
+    }
+
+    & .highlight {
+      border: 1px solid;
+      border-radius: 2px;
+      font-family: Inconsolata, Consolas, Menlo, Monaco, 'MigMix 1m',
+        'migmix-1m', monospace;
+      overflow: scroll;
+      padding: 0.2rem;
+    }
+
+    & a {
+      margin: 0 0.4rem;
+    }
+
+    & a:link,
+    & a:visited {
+      text-decoration: underline;
+    }
+
+    & a:active,
+    & a:hover {
+      text-decoration: none;
+    }
+
+    & code {
+      color: var(--theme-code-color);
+      font-family: Inconsolata, Consolas, Menlo, Monaco, 'MigMix 1m',
+        'migmix-1m', monospace;
+      font-weight: bold;
+      margin: 0 0.4rem;
+    }
+
+    & ol {
+      margin: 2rem 0 2rem 2rem;
     }
   }
 
