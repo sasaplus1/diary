@@ -45,7 +45,7 @@
     "lint:css": "stylelint --cache sources/**/*.css",
     "lint:js": "eslint --cache .",
     "netlify": "NODE_ENV=production run-s build:css && hugo --gc --minify",
-    "new": "docker-compose run --rm sh hugo new \"$(npm_scripts/new-post.sh content/posts)\"",
+    "new": "docker-compose run --rm sh hugo new \"$(npm_scripts/new-post.sh posts)\"",
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",
     "sh": "docker-compose run --rm --service-ports sh",
