@@ -21,6 +21,22 @@
         <div class="post__content">{{- .Content -}}</div>
       </article>
     </main>
+    {{ if or (.PrevInSection) (.NextInSection) }}
+    <nav>
+      <ul>
+        {{ if .NextInSection }}
+        <li>
+          <a href="{{ .NextInSection.Permalink }}">新しい記事</a>
+        </li>
+        {{ end }}
+        {{ if .PrevInSection }}
+        <li>
+          <a href="{{ .PrevInSection.Permalink }}">過去の記事</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+    {{ end }}
     {{ partial "footer.html" . }}
   </body>
 </html>
