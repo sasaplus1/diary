@@ -16,7 +16,7 @@
           <time class="post__time" datetime="{{ .Date.Format "2006-01-02" }}">
             {{- $at -}}
           </time>
-          #{{ $no }}
+          {{- printf " #%s" $no -}}
         </h2>
         <div class="post__content">{{- .Content -}}</div>
       </article>
